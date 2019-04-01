@@ -1,0 +1,35 @@
+--Ubuntu Server
+
+The Ubuntu server 16.04 LTS can be downloaded from the following webpage:
+http://releases.ubuntu.com/xenial/ubuntu-16.04.4-server-amd64.iso
+
+--PostgreSQL
+
+The PostgreSQL Database Management System (DBMS) can be installed (for free) into Ubuntu Sever. In order to properly install the PostreSQL DBMS as it was done for the prototype please follow the instructions in PostgreSQL's website:
+https://www.postgresql.org/download/linux/ubuntu/
+
+The version used by the prototype was 9.6
+
+The PostgreSQL 
+
+--MongoDB
+
+The MongoDB NoSQL Database Management System (DBMS) can be installed (for free) into Ubuntu Sever. In order to properly install the MongoDB NoSQL DBMS as it was done for the prototype please follow the instructions in MongoDB's website:
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+The version used by the prototype was 3.6
+
+Python 3.6.0 Libraries Used:
+bottle                   0.12.13
+googlemaps               2.5.1
+matplotlib               2.2.2
+numpy                    1.14.2
+openpyxl                 2.5.3
+pandas                   0.22.0
+psycopg2                 2.7.4      
+psycopg2-binary          2.7.4
+python-Levenshtein       0.12.0
+SQLAlchemy               1.2.7      
+tensorboard              1.7.0      
+tensorflow               1.7.0
+xlrd                     1.1.0

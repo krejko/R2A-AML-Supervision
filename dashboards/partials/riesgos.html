@@ -1,0 +1,709 @@
+<div ng-include="'inc/menuTop.html'"></div>
+<div class="container general">
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-include="'inc/sideMenuRiesgos.html'"></div>
+        </div>
+        <div class="col-md-10">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h3 class="titInst inst" style="font-size:13px;">Grupo Financiero Banorte, S.A.B. de C.V.</h3>
+                    <div class="form-group">
+                        <select class="form-control selectpicker institucion" id="sel1" data-show-subtext="true" data-live-search="true">
+                            <option value="Grupo Financiero Banorte, S.A.B. de C.V.">Grupo Financiero Banorte, S.A.B. de C.V.</option>
+                            <option value="Fondika">Fondika</option>
+                        </select>
+                    </div>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <script>
+                        $('tr.alertamientofondika').hide();
+                        $('#chartdivRiesgocliafondika').hide();
+                        $('#chartdivRiesgofondika').hide();
+                        $('#chartdivRiesgompfondika').hide();
+                        $('.form-group.banorte.mapa').show();
+                        $('.form-group.fondika.bolas').hide();
+                        $('.form-control.selectpicker.institucion').on('change', function(){
+                           $('.titInst.inst').text(this.value);
+                           if(this.value === "Grupo Financiero Banorte, S.A.B. de C.V."){
+                               $('tr.alertamientobanorte').show();
+                               $('tr.alertamientofondika').hide();
+                               $('#chartdivRiesgoclia').show();
+                               $('#chartdivRiesgocliafondika').hide();
+                               $('#chartdivRiesgo').show();
+                               $('#chartdivRiesgofondika').hide();
+                               $('chartdivRiesgomp').show();
+                               $('chartdivRiesgompfondika').hide();
+                               $('.form-group.banorte.bolas').show();
+                               $('.form-group.fondika.bolas').hide();
+                               $('h3.titInst').css({'background':'#dedede','color':'#1a1a1a'});
+                               $('th.perfilrs').text('');
+                               $('td.perfilnc').text('');
+                               $('td.perfilcasfim').text('');
+                               $('td.perfilsector').text('');
+                               $('td.perfilresponsable').text('');
+                               $('td.perfildireccion').text('');
+                           } else {
+                               $('tr.alertamientobanorte').hide();
+                               $('tr.alertamientofondika').show();
+                               var pruebauno = "http://169.57.27.134:3001/api/CuestOper_pie_clientes";
+                               $('#chartdivRiesgoclia').hide();
+                               $('#chartdivRiesgocliafondika').show();
+                               $('#chartdivRiesgo').hide();
+                               $('#chartdivRiesgofondika').show();
+                               $('#chartdivRiesgomp').hide();
+                               $('#chartdivRiesgompfondika').show();
+                               $('.form-group.banorte.bolas').hide();
+                               $('.form-group.fondika.bolas').show();
+                               $('h3.titInst').css({'background':'#00497c','color':'#ffffff'});
+                               $('th.perfilrs').text('');
+                               $('td.perfilnc').text('');
+                               $('td.perfilcasfim').text('');
+                               $('td.perfilsector').text('');
+                               $('td.perfilresponsable').text('');
+                               $('td.perfildireccion').text('');
+                           }
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h4 class="titInst">Perfil General de Institución</h4>
+                    <table class="table table-striped" style="height:300px;overflow:auto;display:block;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Denominación o Razón Social</th>
+                                <th scope="col" class="perfilrs"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Nombre Corto</th>
+                                <td class="perfilnc"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">CASFIM</th>
+                                <td class="perfilcasfim"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sector</th>
+                                <td class="perfilsector"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Responsable</th>
+                                <td class="perfilresponsable"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dirección</th>
+                                <td class="perfildireccion"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6" style="height:350px;overflow:auto;">
+                    <h4 class="titInst">Tabla de Alertamientos</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Alertamiento</th>
+                                <th scope="col">No. de Operaciones</th>
+                                <th scope="col">Monto Operaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="alertamientobanorte" ng-repeat="alertamiento in alertamientos">
+                                <th scope="row" style="text-align:left;">{{alertamiento.alertamiento}}</th>
+                                <td style="text-align:center;">{{alertamiento.num_op}}</td>
+                                <td style="text-align:left;">{{alertamiento.monto | number : 2}}</td>
+                            </tr>
+                            
+                            <tr class="alertamientofondika" ng-repeat="alertamientofondika in alertamientosfondika">
+                                <th scope="row" style="text-align:left;">{{alertamientofondika.alertamiento}}</th>
+                                <td style="text-align:center;">{{alertamientofondika.num_op}}</td>
+                                <td style="text-align:left;">{{alertamientofondika.monto | number : 2}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h4 class="titInst">Número de Clientes por producto</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgoclia", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/R24_pie_clientes",
+                                "format": "json"
+                            },
+                            "valueField": "num_clientes",
+                            "titleField": "producto",
+                            "labelsEnabled": false,
+                            "fontSize": 12,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgoclia" style="width:100%;height:300px;"></div>
+                    
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgocliafondika", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/CuestOper_pie_clientes",
+                                "format": "json"
+                            },
+                            "valueField": "num_clientes",
+                            "titleField": "producto",
+                            "labelsEnabled": false,
+                            "fontSize": 12,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgocliafondika" style="width:100%;height:300px;"></div>
+                    <ul class="riesgos">
+                        <li><span class="cubo ma"></span> MUY ALTO RIESGO</li>
+                        <li><span class="cubo ar"></span> ALTO RIESGO</li>
+                        <li><span class="cubo rc"></span> RIESGO CONSIDERABLE</li>
+                        <li><span class="cubo rm"></span> RIESGO MEDIO</li>
+                        <li><span class="cubo rb"></span> BAJO RIESGO</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="titInst">Número de Operaciones por producto</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgo", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/R24_pie_num_op",
+                                "format": "json"
+                            },
+                            "valueField": "num_oper",
+                            "titleField": "producto",
+                            "labelsEnabled": false,
+                            "fontSize": 12,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgo" style="width:100%;height:300px;"></div>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgofondika", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/CuestOper_pie_num_op",
+                                "format": "json"
+                            },
+                            "valueField": "num_oper",
+                            "titleField": "producto",
+                            "labelsEnabled": false,
+                            "fontSize": 12,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgofondika" style="width:100%;height:300px;"></div>
+                    <ul class="riesgos">
+                        <li><span class="cubo ma"></span> MUY ALTO RIESGO</li>
+                        <li><span class="cubo ar"></span> ALTO RIESGO</li>
+                        <li><span class="cubo rc"></span> RIESGO CONSIDERABLE</li>
+                        <li><span class="cubo rm"></span> RIESGO MEDIO</li>
+                        <li><span class="cubo rb"></span> BAJO RIESGO</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="titInst">Monto por producto</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgomp", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/R24_pie_monto",
+                                "format": "json"
+                            },
+                            "valueField": "monto",
+                            "titleField": "producto",
+                            "labelsEnabled": false,
+                            "fontSize": 12,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgomp" style="width:100%;height:300px;"></div>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgompfondika", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/CuestOper_pie_monto",
+                                "format": "json"
+                            },
+                            "valueField": "monto",
+                            "titleField": "producto",
+                            "labelsEnabled": false,
+                            "fontSize": 12,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgompfondika" style="width:100%;height:300px;"></div>
+                    <ul class="riesgos">
+                        <li><span class="cubo ma"></span> MUY ALTO RIESGO</li>
+                        <li><span class="cubo ar"></span> ALTO RIESGO</li>
+                        <li><span class="cubo rc"></span> RIESGO CONSIDERABLE</li>
+                        <li><span class="cubo rm"></span> RIESGO MEDIO</li>
+                        <li><span class="cubo rb"></span> BAJO RIESGO</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h4 class="titInst">Número de Operaciones por Instrumento Monetario y Moneda</h4>
+                    <script>
+                    var chart = AmCharts.makeChart( "chartdivx", {
+                      "type": "serial",
+                      "theme": "light",
+                      "depth3D": 3,
+                      "dataLoader": {
+                        "url": "http://169.57.27.134:3001/api/R24_barras_num_op",
+                        "format": "json"
+                      },
+                      "valueAxes": [ {
+                        "gridColor": "#FFFFFF",
+                        "gridAlpha": 0.2,
+                        "dashLength": 0
+                      } ],
+                      "gridAboveGraphs": true,
+                      "startDuration": 1,
+                      "graphs": [ {
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillAlphas": 0.8,
+                        "lineAlpha": 0.2,
+                        "type": "column",
+                        "valueField": "num_oper"
+                      } ],
+                      "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                      },
+                      "categoryField": "cve_moneda",
+                      "categoryAxis": {
+                        "gridPosition": "start",
+                        "gridAlpha": 0,
+                        "tickPosition": "start",
+                        "tickLength": 20,
+                        "labelRotation": 90
+                      },
+                      "export": {
+                        "enabled": true
+                      }
+
+                    } );
+                    </script>
+                    <div id="chartdivx" style="width: 100%;height: 500px;"></div>
+                </div>
+                <div class="col-md-4">  
+                    <h4 class="titInst">Monto por intrumento Monetario y Moneda</h4>
+                    <script>
+                    var chart = AmCharts.makeChart( "chartdivxx", {
+                      "type": "serial",
+                      "theme": "light",
+                      "dataLoader": {
+                        "url": "http://169.57.27.134:3001/api/R24_barras_monto",
+                        "format": "json"
+                      },
+                      "valueAxes": [ {
+                        "gridColor": "#FFFFFF",
+                        "gridAlpha": 0.2,
+                        "dashLength": 0
+                      } ],
+                      "gridAboveGraphs": true,
+                      "startDuration": 1,
+                      "graphs": [ {
+                        "balloonText": "[[category]]: <b>[[value]]</b>",
+                        "fillAlphas": 0.8,
+                        "lineAlpha": 0.2,
+                        "type": "column",
+                        "valueField": "monto"
+                      } ],
+                      "chartCursor": {
+                        "categoryBalloonEnabled": false,
+                        "cursorAlpha": 0,
+                        "zoomable": false
+                      },
+                      "categoryField": "cve_moneda",
+                      "categoryAxis": {
+                        "gridPosition": "start",
+                        "gridAlpha": 0,
+                        "tickPosition": "start",
+                        "tickLength": 20,
+                        "labelRotation": 90
+                      },
+                      "export": {
+                        "enabled": true
+                      }
+
+                    } );
+                    </script>
+                    <div id="chartdivxx" style="width: 100%;height: 500px;"></div>
+                </div>
+                <div class="col-md-4">
+
+                    
+                    <h4 class="titInst">Número de Operaciones/Monto por Zona Geográfica</h4>
+                    
+                    
+                    
+                    <div class="form-group banorte mapa">
+                        <select class="form-control selectpicker" id="sel1" data-show-subtext="true" data-live-search="true">
+                            <option value="Número de operaciones">Número de operaciones</option>
+                            <option value="Monto">Monto</option>
+                        </select>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <script>
+                        var map = AmCharts.makeChart("chartdiv", {
+                            "type": "map",
+                            "theme": "none",
+                            "colorSteps": 10,
+                            "dataProvider": {
+                                "map": "mexicoLow",
+                                "areas": [{
+                                        "id": "MX-BCN",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-BCS",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-CAM",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-CHP",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-CHH",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-COA",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-COL",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-DIF",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-DUR",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-GUA",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-GRO",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-HID",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-JAL",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-MEX",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-MIC",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-MOR",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-NAY",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-NLE",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-OAX",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-PUE",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-QUE",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-ROO",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-SLP",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-SIN",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-SON",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-TAB",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-TAM",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-TLA",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-VER",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-YUC",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-ZAC",
+                                        "value": 0
+                                    }, {
+                                        "id": "MX-AGU",
+                                        "value": 0
+                                    }]
+                            },
+                            "areasSettings": {
+                                "autoZoom": true
+                            },
+                            "valueLegend": {
+                                "right": 10,
+                                "minValue": "Poco",
+                                "maxValue": "Mucho"
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+
+                        });
+                    </script>
+                    <div id="chartdiv" style="width:100%;height:450px;"></div>
+                    
+
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <hr>
+                    <h4 class="titInst">Nivel de Riesgo Ponderado por Categoría</h4>
+                    <hr>
+                    <div class="form-group banorte bolas">
+                        <select class="form-control selectpicker" onchange="setDataSet(this.options[this.selectedIndex].value);">
+                            <option value="http://169.57.27.134:3001/api/R24_rp_LD">Lavado de dinero (Banorte)</option>
+                            <option value="http://169.57.27.134:3001/api/R24_rp_FT">Financiamiento terorismo (Banorte)</option>
+                        </select>
+                    </div>
+                    <div class="form-group fondika bolas">
+                        <select class="form-control selectpicker" id="sel1" data-show-subtext="true" data-live-search="true">
+                            <option value="http://169.57.27.134:3001/api/CuestOper_rp_LD">Lavado de dinero (Fondika)</option>
+                            <option value="http://169.57.27.134:3001/api/CuestOper_rp_FT">Financiamiento terorismo (Fondika)</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <script>
+                    var chart = AmCharts.makeChart("chartdivxxx", {
+                        "type": "xy",
+                        "dataLoader": {
+                            "url": "http://169.57.27.134:3001/api/R24_rp_LD",
+                            "format": "json"
+                        },
+                        "valueAxes": [{
+                          "minimum": 0,
+                          "maximum": 100,
+                          "unit": "%",
+                          "unitPosition": "right",
+                          "position": "bottom",
+                          "axisAlpha": 0,
+                          "autoGridCount": false,
+                          "gridCount": 5,
+                          "minorGridEnabled": true,
+                          "minorGridAlpha": 0.03
+                        }, {
+                          "minimum": -10,
+                          "maximum": 10,
+                          "axisAlpha": 0,
+                          "labelsEnabled": false,
+                          "axisAlpha": 0,
+                          "position": "left"
+                        }],
+                        "startDuration": 1.5,
+                        "sequencedAnimation": false,
+                        "graphs": [{
+                          "balloonText": "Entidad: [[x]]%",
+                          "bullet": "circle",
+                          "bulletBorderAlpha": 0.8,
+                          "bulletAlpha": 0.6,
+                          "lineAlpha": 0,
+                          "fillAlphas": 0,
+                          "xField": "x1",
+                          "yField": "y",
+                          "minBulletSize": 50,
+                          "maxBulletSize": 50
+                        }, {
+                          "balloonText": "Producto: [[x]]%",
+                          "bullet": "circle",
+                          "bulletBorderAlpha": 0.8,
+                          "bulletAlpha": 0.6,
+                          "lineAlpha": 0,
+                          "fillAlphas": 0,
+                          "xField": "x2",
+                          "yField": "y",
+                          "minBulletSize": 50,
+                          "maxBulletSize": 50
+                        }, {
+                          "balloonText": "Moneda:[[x]]%",
+                          "bullet": "circle",
+                          "bulletBorderAlpha": 0.8,
+                          "bulletAlpha": 0.6,
+                          "lineAlpha": 0,
+                          "fillAlphas": 0,
+                          "xField": "x3",
+                          "yField": "y",
+                          "minBulletSize": 50,
+                          "maxBulletSize": 50
+                        }, {
+                          "balloonText": "Persona: [[x]]%",
+                          "bullet": "circle",
+                          "bulletBorderAlpha": 0.8,
+                          "bulletAlpha": 0.6,
+                          "lineAlpha": 0,
+                          "fillAlphas": 0,
+                          "xField": "x4",
+                          "yField": "y",
+                          "minBulletSize": 50,
+                          "maxBulletSize": 50
+                        }],
+                        "export": {
+                            "enabled": true
+                        }
+                    });
+                    
+                    function setDataSet(dataset_url) {
+                      AmCharts.loadFile(dataset_url, {}, function(data) {
+                        chart.dataProvider = AmCharts.parseJSON(data);
+                        chart.validateData();
+                      });
+                    }
+                    </script>
+                    <div id="chartdivxxx" style="width:100%;height:350px;"></div>
+                    
+
+                    <hr>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <hr>
+                    <h4 class="titInst">Árbol de Relaciones Clientes por Categoría</h4>
+                    <hr>
+                    <button id="clusterButton" type="button" class="btn btn-primary">PINTAR CLUSTER</button>
+
+                    <div id="graph" class="graph" style="width:100%; height: 300px;"></div>
+
+                    <script>
+                    var width = 590,
+                        height = 290;
+                    var color = d3.scale.category20();
+                    var force = d3.layout.force()
+                        .charge(-100)
+                        .linkDistance(30)
+                        .size([width, height]);
+                    var svg = d3.select(".graph").append("svg")
+                        .attr("preserveAspectRatio", "xMinYMin meet")
+.attr("viewBox", "0 0 590 300");
+                    d3.json("data/datos.json", function(error, graph) {
+                      force
+                          .nodes(graph.nodes)
+                          .links(graph.links)
+                          .start();
+                      var link = svg.selectAll(".link")
+                          .data(graph.links)
+                        .enter().append("line")
+                          .attr("class", "link")
+                          .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+                      var node = svg.selectAll(".node")
+                          .data(graph.nodes)
+                        .enter().append("circle")
+                          .attr("class", "node")
+                          .attr("r", 5)
+                          .call(force.drag);
+                      node.append("title")
+                          .text(function(d) { return d.name; });
+                      force.on("tick", function() {
+                        link.attr("x1", function(d) { return d.source.x; })
+                            .attr("y1", function(d) { return d.source.y; })
+                            .attr("x2", function(d) { return d.target.x; })
+                            .attr("y2", function(d) { return d.target.y; });
+                        node.attr("cx", function(d) { return d.x; })
+                            .attr("cy", function(d) { return d.y; });
+                      });
+                      d3.select("#clusterButton").on("click", function () {
+                        /******************/
+                        /*  Clustering    */
+                        /******************/
+                        netClustering.cluster(graph.nodes, graph.links);
+                        svg.selectAll(".node").transition().duration(2000).style("fill", function(d) { return color(d.cluster); });
+                      });
+                    });
+                    </script>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>

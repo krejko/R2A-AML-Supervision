@@ -1,0 +1,372 @@
+<div class="side-menu">
+    
+    <nav class="navbar navbar-default" role="navigation">
+    
+    <!-- Main Menu -->
+    <div class="side-menu-container">
+        <ul class="nav navbar-nav">
+
+            <li>
+                <a href="#!expedienteInstitucionFinanciera" class="veif">
+                    <img src="images/institucion.svg" alt="" title=""><br>
+                    Vista Extendida de la Institución Financiera
+                </a>
+                <ul class="elsubmenu">
+                    <li>
+                        <a data-toggle="modal" data-target="#exampleModalUno" class="veif">
+                            SECCIÓN 1
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#exampleModalDos" class="veif">
+                            SECCIÓN 2
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#exampleModalTres" class="veif">
+                            SECCIÓN 3
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#exampleModalCuatro" class="veif">
+                            SECCIÓN 4
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="veif">
+                    <img src="images/financiero.svg" alt="" title=""><br>
+                    Vista Extendida de Usuarios del Sector Financiero
+                </a>
+                
+            </li>
+        </ul>
+        
+        
+        
+        
+    </div><!-- /.navbar-collapse -->
+</nav>
+    
+    </div>
+
+<div class="modal fade modalSecciones" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccione Sección</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a ng-click="go('/expedienteInstitucionFinanciera')" class="btn btn-primary sec" data-dismiss="modal">Análisis comparativo R24E ó Cuestionario<br> de Operatividad de la Institución vs Sector</a>
+                        <ul class="secciones">
+                            <li>
+                                <a href="#!expedienteInstitucionFinanciera">
+                                    1
+                                </a>
+                            </li>
+                            <!--
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraDos">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraTres">
+                                    3
+                                </a>
+                            </li>
+                            -->
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraCuatro">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraCinco">
+                                    3
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraSeis">
+                                    4
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraSiete">
+                                    5
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraOcho">
+                                    6
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraNueve">
+                                    7
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraDiez">
+                                    8
+                                </a>
+                            </li>
+                            <!--
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraOnce">
+                                    11
+                                </a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <a  ng-click="go('/expedienteInstitucionFinancieraCinco')" class="btn btn-primary sec" data-dismiss="modal">Reportes de Conciliación</a>
+                        <ul class="secciones conciliacion">
+                            <li>
+                                <a href="#!expedienteConciliacion">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteConciliacionUno">
+                                    2
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#!expedienteInstitucionFinanciera" class="btn btn-primary sec">Reporte de Estadística Descriptiva<br>de Institución de acuerdo a riesgo</a>
+                        <ul class="secciones estadistica">
+                            <li>
+                                <a href="#!expedienteEstadistica">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteEstadisticaUno">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteEstadisticaDos">
+                                    3
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#!expedienteInstitucionFinanciera" class="btn btn-primary sec">Análisis de Alertas de Riesgo</a>
+                        <ul class="secciones alertas">
+                            <li>
+                                <a href="#!expedienteAlertas">
+                                    1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteAlertasUno">
+                                    2
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modalSecciones" id="exampleModalUno" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccione Sección</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#!expedienteInstitucionFinanciera" class="btn btn-primary sec" data-dismiss="modal">Análisis comparativo R24E ó Cuestionario<br> de Operatividad de la Institución vs Sector</a>
+                        <ul class="secciones">
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraCuatro">
+                                    REPORTE 1:<br>Relaciones de Volumen Cliente-Producto en R24E
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraCinco">
+                                    REPORTE 2:<br>Top 10: Cliente-Producto en R24E/Cuestionario de Operatividad de acuerdo a riesgo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraSeis">
+                                    REPORTE 3:<br>Número y monto de operaciones por producto, instrumento monetario y moneda, con Riesgo
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraSiete">
+                                    REPORTE 4:<br>Número de operaciones por producto, instrumento monetario y moneda de la Institución vs el Sector
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraOcho">
+                                    REPORTE 5:<br>Número de clientes PEPs, con actividades de alto riesgo por producto
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraNueve">
+                                    REPORTE 6:<br>Número de operaciones ó monto operado por producto y zona geográfica (en México) por Nivel de Riesgo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraDiez">
+                                    REPORTE 7:<br>Número de operaciones ó monto operado por producto y zona geográfica (transferencias internacionales) por riesgo
+                                </a>
+                            </li>
+                            <!--
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraDiez">
+                                    8
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="#!expedienteInstitucionFinancieraOnce">
+                                    11
+                                </a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modalSecciones" id="exampleModalDos" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccione Sección</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a  ng-click="go('/expedienteInstitucionFinancieraCinco')" class="btn btn-primary sec" data-dismiss="modal">Reportes de Conciliación</a>
+                        <ul class="secciones conciliacion">
+                            <li>
+                                <a href="#!expedienteConciliacion">
+                                    REPORTE 1:<br>Conciliación de Elementos de Cuestionario(R24E / Operatividad) vs Información Operativa de Institución por Producto y Cliente
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteConciliacionUno">
+                                    REPORTE 2:<br>Conciliación de Elementos de Cuestionario(R24E / Operatividad) vs Información Operativa de Institución por Producto y Moneda
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modalSecciones" id="exampleModalTres" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccione Sección</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#!expedienteInstitucionFinanciera" class="btn btn-primary sec">Reporte de Estadística Descriptiva<br>de Institución de acuerdo a riesgo</a>
+                        <ul class="secciones estadistica">
+                            <li>
+                                <a href="#!expedienteEstadistica">
+                                    REPORTE 1:<br>Histograma de #Operaciones ó Monto por Categoría( Producto, Moneda, Instrumento Monetario y Zona Geográfica)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteEstadisticaUno">
+                                    REPORTE 2:<br>Serie de Tiempo de #Operaciones ó Monto por Categoría( Producto, Moneda, Instrumento Monetario y Zona Geográfica)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteEstadisticaDos">
+                                    REPORTE 3:<br>CLUSTERS
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modalSecciones" id="exampleModalCuatro" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seleccione Sección</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#!expedienteInstitucionFinanciera" class="btn btn-primary sec">Análisis de Alertas de Riesgo</a>
+                        <ul class="secciones alertas">
+                            <li>
+                                <a href="#!expedienteAlertas">
+                                    REPORTE 1:<br>Análisis de Alertas de Riesgo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!expedienteAlertasUno">
+                                    REPORTE 2:<br>Análisis de Alertas de Riesgo por Zona Geográfica
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

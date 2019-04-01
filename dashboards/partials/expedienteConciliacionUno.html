@@ -1,0 +1,332 @@
+<div ng-include="'inc/menuTop.html'"></div>
+<div class="container general">
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-include="'inc/sideMenu.html'"></div>
+        </div>
+        <div class="col-md-10">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h3 class="titInst inst" style="font-size:13px;">Grupo Financiero Banorte, S.A.B. de C.V.</h3>
+                    <div class="form-group">
+                        <select class="form-control selectpicker institucion" id="sel1" data-show-subtext="true" data-live-search="true">
+                            <option value="Grupo Financiero Banorte, S.A.B. de C.V.">Grupo Financiero Banorte, S.A.B. de C.V.</option>
+                            <option value="Fondika">Fondika</option>
+                        </select>
+                    </div>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <script>
+                        $('.table.table-striped.subacuac.fondika').hide();
+                        $('#chartdivfondika').hide();
+                        $('#chartdivyfondika').hide();
+                        $('.form-control.selectpicker.institucion').on('change', function(){
+                           $('.titInst.inst').text(this.value);
+                           if(this.value === "Grupo Financiero Banorte, S.A.B. de C.V."){
+                               $('.table.table-striped.subacuac.banorte').show();
+                               $('.table.table-striped.subacuac.fondika').hide();
+                               $('#chartdivbanorte').show();
+                               $('#chartdivfondika').hide();
+                               $('#chartdivybanorte').show();
+                               $('#chartdivyfondika').hide();
+                           } else {
+                               $('.table.table-striped.subacuac.banorte').hide();
+                               $('.table.table-striped.subacuac.fondika').show();
+                               $('#chartdivbanorte').hide();
+                               $('#chartdivfondika').show();
+                               $('#chartdivybanorte').hide();
+                               $('#chartdivyfondika').show();
+                           }
+                        });
+                    </script>
+                </div>
+                <div ng-include="'inc/menuExpediente.html'"></div>
+                <div class="col-md-12">
+                    <hr>
+                    <h1 class="titInst">Reporte 2</h1>
+                    <h4 class="titInst">Conciliación de Elementos de Cuestionario vs Información Operativa por Producto y Moneda</h4>
+                    <hr>
+                    <h4 class="titInst">Elementos de R24 vs Información Operativa</h4>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivbanorte", {
+                            "theme": "light",
+                            "type": "serial",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/rs2r2_barraOper",
+                                "format": "json"
+                            },
+                            "valueAxes": [{
+                                    "unit": "op",
+                                    "position": "left",
+                                    "title": "Información Operativa"
+                                }],
+                            "startDuration": 1,
+                            "graphs": [{
+                                    "balloonText": "Noper [[category]] : <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2004",
+                                    "type": "column",
+                                    "valueField": "vect_moneda_x"
+                                }, {
+                                    "balloonText": "Noper [[category]] : <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2005",
+                                    "type": "column",
+                                    "clustered": false,
+                                    "columnWidth": 0.5,
+                                    "valueField": "vector_monedax_R24E"
+                                }],
+                            "plotAreaFillAlphas": 0.1,
+                            "categoryField": "Producto",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "labelRotation": 90
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivbanorte" style="width: 100%; height: 590px;"></div>
+                    
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivfondika", {
+                            "theme": "light",
+                            "type": "serial",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/rs2r2_barraMontoF",
+                                "format": "json"
+                            },
+                            "valueAxes": [{
+                                    "unit": "$",
+                                    "position": "left",
+                                    "title": "Información Operativa"
+                                }],
+                            "startDuration": 1,
+                            "graphs": [{
+                                    "balloonText": "Monto [[category]]: <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2004",
+                                    "type": "column",
+                                    "valueField": "vect_moneda_x"
+                                }, {
+                                    "balloonText": "Monto [[category]]: <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2005",
+                                    "type": "column",
+                                    "clustered": false,
+                                    "columnWidth": 0.5,
+                                    "valueField": "vector_monedax_R24E"
+                                }],
+                            "plotAreaFillAlphas": 0.1,
+                            "categoryField": "producto",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "labelRotation": 90
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivfondika" style="width: 100%; height: 590px;"></div>
+                </div>
+                <div class="col-md-6">
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivybanorte", {
+                            "theme": "light",
+                            "type": "serial",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/rs2r2_barraMonto",
+                                "format": "json"
+                            },
+                            "valueAxes": [{
+                                    "unit": "$",
+                                    "position": "left",
+                                    "title": "Información Operativa"
+                                }],
+                            "startDuration": 1,
+                            "graphs": [{
+                                    "balloonText": "Monto [[category]] : <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2004",
+                                    "type": "column",
+                                    "valueField": "vect_moneda_1"
+                                }, {
+                                    "balloonText": "Monto [[category]] : <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2005",
+                                    "type": "column",
+                                    "clustered": false,
+                                    "columnWidth": 0.5,
+                                    "valueField": "vector_moneda1_R24E"
+                                }],
+                            "plotAreaFillAlphas": 0.1,
+                            "categoryField": "Producto",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "labelRotation": 90
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivybanorte" style="width: 100%; height: 590px;"></div>
+                    
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivyfondika", {
+                            "theme": "light",
+                            "type": "serial",
+                            "dataLoader": {
+                                "url": "http://169.57.27.134:3001/api/rs2r2_barraOperF",
+                                "format": "json"
+                            },
+                            "valueAxes": [{
+                                    "unit": "op",
+                                    "position": "left",
+                                    "title": "Información Operativa"
+                                }],
+                            "startDuration": 1,
+                            "graphs": [{
+                                    "balloonText": "N_op [[category]] : <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2004",
+                                    "type": "column",
+                                    "valueField": "vect_moneda_x"
+                                }, {
+                                    "balloonText": "N_op [[category]] : <b>[[value]]</b>",
+                                    "fillAlphas": 0.9,
+                                    "lineAlpha": 0.2,
+                                    "title": "2005",
+                                    "type": "column",
+                                    "clustered": false,
+                                    "columnWidth": 0.5,
+                                    "valueField": "vector_monedax_R24E"
+                                }],
+                            "plotAreaFillAlphas": 0.1,
+                            "categoryField": "producto",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "labelRotation": 90
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivyfondika" style="width: 100%; height: 590px;"></div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <table class="table table-striped subacuac banorte">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th colspan="12">Tipo de Moneda</th>
+                            </tr>
+                            <tr>
+                                <th>Tipo de producto</th>
+                                <th colspan="3">Moneda Nacional Efectivo</th>
+                                <th colspan="3">Moneda Nacional Otros</th>
+                                <th colspan="3">Moneda Extranjera Efectivo</th>
+                                <th colspan="3">Moneda Extranjera Otros</th>
+                            </tr>
+                            <tr>
+                                <th>Tipo de producto</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="tabla in tablaconc">
+                                <td>{{tabla.Producto}}</td>
+                                <td>{{tabla.vector_moneda1_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_1 | number : 2}}</td>
+                                <td>{{tabla.dif_moneda_1}}%</td>
+                                <td>{{tabla.vector_moneda2_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_2 | number : 2}}</td>
+                                <td>{{tabla.dif_moneda_2}}%</td>
+                                <td>{{tabla.vector_moneda3_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_3 | number : 2}}</td>
+                                <td>{{tabla.dif_moneda_3}}%</td>
+                                <td>{{tabla.vector_moneda4_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_4 | number : 2}}</td>
+                                <td>{{tabla.dif_moneda_4}}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <table class="table table-striped subacuac fondika">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th colspan="12">Tipo de Moneda</th>
+                            </tr>
+                            <tr>
+                                <th>Tipo de producto</th>
+                                <th colspan="3">Moneda Nacional Efectivo</th>
+                                <th colspan="3">Moneda Nacional Otros</th>
+                                <th colspan="3">Moneda Extranjera Efectivo</th>
+                                <th colspan="3">Moneda Extranjera Otros</th>
+                            </tr>
+                            <tr>
+                                <th>Tipo de producto</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                                <th>Cuestionario R24 E</th>
+                                <th>Información Operativa</th>
+                                <th>Diferencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="tabla in tablaconcFondika">
+                                <td>{{tabla.Producto}}</td>
+                                <td>{{tabla.vector_moneda1_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_1 | number : 2}}</td>
+                                <td class="a">{{tabla.dif_moneda_1}}%</td>
+                                <td>{{tabla.vector_moneda2_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_2 | number : 2}}</td>
+                                <td class="r">{{tabla.dif_moneda_2}}%</td>
+                                <td>{{tabla.vector_moneda3_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_3 | number : 2}}</td>
+                                <td class="v">{{tabla.dif_moneda_3}}%</td>
+                                <td>{{tabla.vector_moneda4_R24E}}</td>
+                                <td>$ {{tabla.vect_moneda_4 | number : 2}}</td>
+                                <td class="r">{{tabla.dif_moneda_4}}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

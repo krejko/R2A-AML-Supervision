@@ -1,0 +1,18 @@
+[{
+    "instrumento": {
+        "periodo": null,
+        "num_cuenta": null,
+        "CURP": null,
+        "RFC": null,
+        "monto": 237500.00,
+        "ins_mon": 2
+    },
+    "monto": {
+        "periodo": null,
+        "num_oper": null,
+        "CURP": null,
+        "RFC": null,
+        "monto": null,
+        "ins_mon": null
+    }
+}]

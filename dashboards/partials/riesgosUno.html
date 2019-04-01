@@ -1,0 +1,132 @@
+<div ng-include="'inc/menuTop.html'"></div>
+<div class="container general">
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-include="'inc/sideMenuRiesgos.html'"></div>
+        </div>
+        <div class="col-md-10">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h3 class="titInst" style="font-size:13px;">Grupo Financiero Banorte, S.A.B. de C.V.</h3>
+                    <div ng-include="'inc/select.html'"></div>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                    <h1 class="titInst">Reporte 1</h1>
+                    <h4 class="titInst">Número de Operaciones y Monto para Personas Físicas Menores de Edad,<br>Mayores de 80 años y Personas Morales Con Menos de 3 años</h4>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h4 class="titInst">Tipo Cliente de Riesgo - Monto</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgo", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataProvider": [{
+                                    "country": "Fisica Menor de Edad",
+                                    "litres": 0
+                                }, {
+                                    "country": "Fisica Mayor de 80",
+                                    "litres": 0
+                                }, {
+                                    "country": "Moral Menor a 3",
+                                    "litres": 0
+                                }],
+                            "valueField": "litres",
+                            "titleField": "country",
+                            "labelsEnabled": false,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgo" style="width:100%;height:300px;"></div>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="titInst">Tipo Cliente de Riesgo - No. Operaciones</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgomp", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataProvider": [{
+                                    "country": "Fisica Menor de Edad",
+                                    "litres": 0
+                                }, {
+                                    "country": "Fisica Mayor de 80",
+                                    "litres": 0
+                                }, {
+                                    "country": "Moral Menor a 3",
+                                    "litres": 0
+                                }],
+                            "valueField": "litres",
+                            "titleField": "country",
+                            "labelsEnabled": false,
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgomp" style="width:100%;height:300px;"></div>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">  
+                    <ul class="riesgos" style="margin-top: 110px;margin-left: 50px;">
+                        <li><span class="cubo ma"></span> Persona Fisica Mayor a 80</li>
+                        <li><span class="cubo ar"></span>Persona Moral Menor a 3</li>
+                        <li><span class="cubo rb"></span> Persona Fisica Menor de Edad</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5 mb-5">
+                <div class="col-md-12">
+                    <hr>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    No. de Cliente
+                                </th>
+                                <th>
+                                    RFC
+                                </th>
+                                <th>
+                                    Tipo de Cliente de Riesgo
+                                </th>
+                                <th>
+                                   No. de Operaciones
+                                </th>
+                                <th>
+                                    Monto
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="mppf in mppfs | limitTo:10">
+                                <td>{{mppf.num_cliente}}</td>
+                                <td>{{mppf.RFC}}</td>
+                                <td>{{mppf.persona_riesgo}}</td>
+                                <td>{{mppf.num_op_cliente}}</td>
+                                <td style="text-align:left;">{{mppf.monto_cliente | number:2 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

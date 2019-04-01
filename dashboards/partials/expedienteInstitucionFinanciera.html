@@ -1,0 +1,920 @@
+<div ng-include="'inc/menuTop.html'"></div>
+<div class="container general">
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-include="'inc/sideMenu.html'"></div>
+        </div>
+        <div class="col-md-10">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h3 class="titInst" style="font-size:13px;">Grupo Financiero Banorte, S.A.B. de C.V.</h3>
+                    <div ng-include="'inc/select.html'"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="titInst">Perfil General de Institución</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Denominación o Razón Social</th>
+                                <th scope="col">Grupo Financiero Banorte, S.A.B. de C.V.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Domicilio</th>
+                                <td>ZARAGOZA No. 920 SUR MONTERREY N.L. C.P. 640000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fecha de Constitución</th>
+                                <td>01/01/89</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nacionalidad</th>
+                                <td>México</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Actividad Genérica</th>
+                                <td>Banca Múltiple</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Actividad Específica</th>
+                                <td>Banca Comercial</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Activo Total</th>
+                                <td>$ 1,000,000,000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Riesgo Institucional</th>
+                                <td>5%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nombre Completo del Director General/Apoderado Legal</th>
+                                <td>José Marcos Ramírez Miguel</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Riesgo Institucional</th>
+                                <td>5%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nombre Completo del Director General/Apoderado Legal</th>
+                                <td>José Marcos Ramírez Miguel</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div align='center'>
+                                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                                    </div>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="titInst">Tabla de Alertamientos</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Alertamiento</th>
+                                <th scope="col">No. de Operaciones</th>
+                                <th scope="col">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Producto A</th>
+                                <td>224,442</td>
+                                <td>22445200.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto B</th>
+                                <td>883,360</td>
+                                <td>88336000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto C</th>
+                                <td>976,452</td>
+                                <td>976452000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto D</th>
+                                <td>304,662</td>
+                                <td>304622000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto E</th>
+                                <td>642,942</td>
+                                <td>644622000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto F</th>
+                                <td>781,842</td>
+                                <td>781821000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto G</th>
+                                <td>792,842</td>
+                                <td>792821000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto H</th>
+                                <td>319,842</td>
+                                <td>319721000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto I</th>
+                                <td>108,805</td>
+                                <td>108821000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><b>TOTAL</b></th>
+                                <td>524,805</td>
+                                <td>5241921000.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>
+                                    <div align='center'>
+                                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="titInst">Número de Operaciones por producto</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgo", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataProvider": [{
+                                    "country": "A",
+                                    "litres": 501.9
+                                }, {
+                                    "country": "S",
+                                    "litres": 301.9
+                                }, {
+                                    "country": "D",
+                                    "litres": 201.1
+                                }, {
+                                    "country": "F",
+                                    "litres": 165.8
+                                }, {
+                                    "country": "G",
+                                    "litres": 139.9
+                                }, {
+                                    "country": "H",
+                                    "litres": 128.3
+                                }, {
+                                    "country": "J",
+                                    "litres": 99
+                                }, {
+                                    "country": "K",
+                                    "litres": 60
+                                }, {
+                                    "country": "L",
+                                    "litres": 50
+                                }],
+                            "valueField": "litres",
+                            "titleField": "country",
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgo" style="width:100%;height:300px;"></div>
+                    <ul class="riesgos">
+                        <li><span class="cubo ma"></span> MUY ALTO RIESGO</li>
+                        <li><span class="cubo ar"></span> ALTO RIESGO</li>
+                        <li><span class="cubo rc"></span> RIESGO CONSIDERABLE</li>
+                        <li><span class="cubo rm"></span> RIESGO MEDIO</li>
+                        <li><span class="cubo rb"></span> BAJO RIESGO</li>
+                    </ul>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="titInst">Monto por producto</h4>
+                    <script>
+                        var chart = AmCharts.makeChart("chartdivRiesgomp", {
+                            "type": "pie",
+                            "theme": "light",
+                            "dataProvider": [{
+                                    "country": "A",
+                                    "litres": 501.9
+                                }, {
+                                    "country": "B",
+                                    "litres": 301.9
+                                }, {
+                                    "country": "C",
+                                    "litres": 201.1
+                                }, {
+                                    "country": "D",
+                                    "litres": 165.8
+                                }, {
+                                    "country": "E",
+                                    "litres": 139.9
+                                }, {
+                                    "country": "F",
+                                    "litres": 128.3
+                                }, {
+                                    "country": "G",
+                                    "litres": 99
+                                }, {
+                                    "country": "H",
+                                    "litres": 60
+                                }, {
+                                    "country": "I",
+                                    "litres": 50
+                                }],
+                            "valueField": "litres",
+                            "titleField": "country",
+                            "balloon": {
+                                "fixedPosition": true
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+                    </script>
+                    <div id="chartdivRiesgomp" style="width:100%;height:300px;"></div>
+                    <ul class="riesgos">
+                        <li><span class="cubo ma"></span> MUY ALTO RIESGO</li>
+                        <li><span class="cubo ar"></span> ALTO RIESGO</li>
+                        <li><span class="cubo rc"></span> RIESGO CONSIDERABLE</li>
+                        <li><span class="cubo rm"></span> RIESGO MEDIO</li>
+                        <li><span class="cubo rb"></span> BAJO RIESGO</li>
+                    </ul>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">  
+                    <h4 class="titInst">Número de Operaciones/Monto por Prodcuto y Zona Geográfica</h4>
+                    <script>
+                        var map = AmCharts.makeChart("chartdiv", {
+                            "type": "map",
+                            "theme": "none",
+                            "colorSteps": 10,
+                            "dataProvider": {
+                                "map": "mexicoLow",
+                                "areas": [{
+                                        "id": "MX-BCN",
+                                        "value": 4447100
+                                    }, {
+                                        "id": "MX-BCS",
+                                        "value": 626932
+                                    }, {
+                                        "id": "MX-CAM",
+                                        "value": 5130632
+                                    }, {
+                                        "id": "MX-CHP",
+                                        "value": 2673400
+                                    }, {
+                                        "id": "MX-CHH",
+                                        "value": 33871648
+                                    }, {
+                                        "id": "MX-COA",
+                                        "value": 4301261
+                                    }, {
+                                        "id": "MX-COL",
+                                        "value": 3405565
+                                    }, {
+                                        "id": "MX-DIF",
+                                        "value": 783600
+                                    }, {
+                                        "id": "MX-DUR",
+                                        "value": 15982378
+                                    }, {
+                                        "id": "MX-GUA",
+                                        "value": 8186453
+                                    }, {
+                                        "id": "MX-GRO",
+                                        "value": 1211537
+                                    }, {
+                                        "id": "MX-HID",
+                                        "value": 1293953
+                                    }, {
+                                        "id": "MX-JAL",
+                                        "value": 12419293
+                                    }, {
+                                        "id": "MX-MEX",
+                                        "value": 6080485
+                                    }, {
+                                        "id": "MX-MIC",
+                                        "value": 2926324
+                                    }, {
+                                        "id": "MX-MOR",
+                                        "value": 2688418
+                                    }, {
+                                        "id": "MX-NAY",
+                                        "value": 4041769
+                                    }, {
+                                        "id": "MX-NLE",
+                                        "value": 4468976
+                                    }, {
+                                        "id": "MX-OAX",
+                                        "value": 1274923
+                                    }, {
+                                        "id": "MX-PUE",
+                                        "value": 5296486
+                                    }, {
+                                        "id": "MX-QUE",
+                                        "value": 6349097
+                                    }, {
+                                        "id": "MX-ROO",
+                                        "value": 9938444
+                                    }, {
+                                        "id": "MX-SLP",
+                                        "value": 4919479
+                                    }, {
+                                        "id": "MX-SIN",
+                                        "value": 2844658
+                                    }, {
+                                        "id": "MX-SON",
+                                        "value": 5595211
+                                    }, {
+                                        "id": "MX-TAB",
+                                        "value": 902195
+                                    }, {
+                                        "id": "MX-TAM",
+                                        "value": 1711263
+                                    }, {
+                                        "id": "MX-TLA",
+                                        "value": 1998257
+                                    }, {
+                                        "id": "MX-VER",
+                                        "value": 1235786
+                                    }, {
+                                        "id": "MX-YUC",
+                                        "value": 8414350
+                                    }, {
+                                        "id": "MX-ZAC",
+                                        "value": 1819046
+                                    }, {
+                                        "id": "MX-AGU",
+                                        "value": 1819046
+                                    }]
+                            },
+                            "areasSettings": {
+                                "autoZoom": true
+                            },
+                            "valueLegend": {
+                                "right": 10,
+                                "minValue": "POCO",
+                                "maxValue": "MUCHO"
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+
+                        });
+                    </script>
+                    <div id="chartdiv" style="width:100%;height:450px;"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 class="titInst">Número de Operaciones por Instrumento Monetario y Moneda</h4>
+                    <script>
+var chart = AmCharts.makeChart( "chartdivx", {
+  "type": "serial",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "USA",
+    "visits": 2025
+  }, {
+    "country": "China",
+    "visits": 1882
+  }, {
+    "country": "Japan",
+    "visits": 1809
+  }, {
+    "country": "Germany",
+    "visits": 1322
+  }, {
+    "country": "UK",
+    "visits": 1122
+  }, {
+    "country": "France",
+    "visits": 1114
+  }, {
+    "country": "India",
+    "visits": 984
+  }, {
+    "country": "Spain",
+    "visits": 711
+  }, {
+    "country": "Netherlands",
+    "visits": 665
+  }, {
+    "country": "Russia",
+    "visits": 580
+  }, {
+    "country": "South Korea",
+    "visits": 443
+  }, {
+    "country": "Canada",
+    "visits": 441
+  }, {
+    "country": "Brazil",
+    "visits": 395
+  } ],
+  "valueAxes": [ {
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0
+  } ],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [ {
+    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "fillAlphas": 0.8,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "visits"
+  } ],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "country",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0,
+    "tickPosition": "start",
+    "tickLength": 20
+  },
+  "export": {
+    "enabled": true
+  }
+
+} );
+</script>
+                    <div id="chartdivx" style="width: 100%;height: 350px;"></div>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">  
+                    <h4 class="titInst">Monto por intrumento Monetario y Moneda</h4>
+                    <script>
+var chart = AmCharts.makeChart( "chartdivxx", {
+  "type": "serial",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "USA",
+    "visits": 2025
+  }, {
+    "country": "China",
+    "visits": 1882
+  }, {
+    "country": "Japan",
+    "visits": 1809
+  }, {
+    "country": "Germany",
+    "visits": 1322
+  }, {
+    "country": "UK",
+    "visits": 1122
+  }, {
+    "country": "France",
+    "visits": 1114
+  }, {
+    "country": "India",
+    "visits": 984
+  }, {
+    "country": "Spain",
+    "visits": 711
+  }, {
+    "country": "Netherlands",
+    "visits": 665
+  }, {
+    "country": "Russia",
+    "visits": 580
+  }, {
+    "country": "South Korea",
+    "visits": 443
+  }, {
+    "country": "Canada",
+    "visits": 441
+  }, {
+    "country": "Brazil",
+    "visits": 395
+  } ],
+  "valueAxes": [ {
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0
+  } ],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [ {
+    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "fillAlphas": 0.8,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "visits"
+  } ],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "country",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0,
+    "tickPosition": "start",
+    "tickLength": 20
+  },
+  "export": {
+    "enabled": true
+  }
+
+} );
+</script>
+                    <div id="chartdivxx" style="width: 100%;height: 350px;"></div>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">  
+                    <h4 class="titInst">Categorías de Riesgo</h4>
+                    <script>
+var chart = AmCharts.makeChart("chartdivxxx", {
+    "type": "xy",
+    "theme": "light",
+    "marginRight": 80,
+    "dataDateFormat": "YYYY-MM-DD",
+    "startDuration": 1.5,
+    "trendLines": [],
+    "balloon": {
+        "adjustBorderColor": false,
+        "shadowAlpha": 0,
+        "fixedPosition":true
+    },
+    "graphs": [{
+        "balloonText": "<div style='margin:5px;'><b>[[x]]</b><br>y:<b>[[y]]</b><br>value:<b>[[value]]</b></div>",
+        "bullet": "diamond",
+        "id": "AmGraph-1",
+        "lineAlpha": 0,
+        "lineColor": "#b0de09",
+        "fillAlphas": 0,
+        "valueField": "aValue",
+        "xField": "date",
+        "yField": "ay"
+    }, {
+        "balloonText": "<div style='margin:5px;'><b>[[x]]</b><br>y:<b>[[y]]</b><br>value:<b>[[value]]</b></div>",
+        "bullet": "round",
+        "id": "AmGraph-2",
+        "lineAlpha": 0,
+        "lineColor": "#fcd202",
+        "fillAlphas": 0,
+        "valueField": "bValue",
+        "xField": "date",
+        "yField": "by"
+    }],
+    "valueAxes": [{
+        "id": "ValueAxis-1",
+        "axisAlpha": 0
+    }, {
+        "id": "ValueAxis-2",
+        "axisAlpha": 0,
+        "position": "bottom",
+        "type": "date",
+        "minimumDate": new Date(2014, 11, 31),
+        "maximumDate": new Date(2015, 0, 13)
+    }],
+    "allLabels": [],
+    "titles": [],
+    "dataProvider": [{
+        "date": "2015-01-01",
+        "ay": 6.5,
+        "by": 2.2,
+        "aValue": 15,
+        "bValue": 10
+    }, {
+        "date": "2015-01-02",
+        "ay": 12.3,
+        "by": 4.9,
+        "aValue": 8,
+        "bValue": 3
+    }, {
+        "date": "2015-01-03",
+        "ay": 12.3,
+        "by": 5.1,
+        "aValue": 16,
+        "bValue": 4
+    }, {
+        "date": "2015-01-04",
+        "ay": 2.8,
+        "by": 13.3,
+        "aValue": 9,
+        "bValue": 13
+    }, {
+        "date": "2015-01-05",
+        "ay": 3.5,
+        "by": 6.1,
+        "aValue": 5,
+        "bValue": 2
+    }, {
+        "date": "2015-01-06",
+        "ay": 5.1,
+        "by": 8.3,
+        "aValue": 10,
+        "bValue": 17
+    }, {
+        "date": "2015-01-07",
+        "ay": 6.7,
+        "by": 10.5,
+        "aValue": 3,
+        "bValue": 10
+    }, {
+        "date": "2015-01-08",
+        "ay": 8,
+        "by": 12.3,
+        "aValue": 5,
+        "bValue": 13
+    }, {
+        "date": "2015-01-09",
+        "ay": 8.9,
+        "by": 4.5,
+        "aValue": 8,
+        "bValue": 11
+    }, {
+        "date": "2015-01-10",
+        "ay": 9.7,
+        "by": 15,
+        "aValue": 15,
+        "bValue": 10
+    }, {
+        "date": "2015-01-11",
+        "ay": 10.4,
+        "by": 10.8,
+        "aValue": 1,
+        "bValue": 11
+    }, {
+        "date": "2015-01-12",
+        "ay": 1.7,
+        "by": 19,
+        "aValue": 12,
+        "bValue": 3
+    }],
+
+    "export": {
+        "enabled": true
+    },
+
+    "chartScrollbar": {
+        "offset": 15,
+        "scrollbarHeight": 5
+    },
+
+    "chartCursor":{
+       "pan":true,
+       "cursorAlpha":0,
+       "valueLineAlpha":0
+    }
+});
+</script>
+                    <div id="chartdivxxx" style="width:100%;height:350px;"></div>
+                    <div align='center'>
+                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!--
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="titInst">Top 10: Productos con más clientes de alto riesgo</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th colspan="4" scope="col">Tipo de Cliente</th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col" colspan="2">Nacional</th>
+                                <th scope="col" colspan="2">Extranjero</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">P. Física</th>
+                                <th scope="col">P. Moral</th>
+                                <th scope="col">P. Física</th>
+                                <th scope="col">P. Moral</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Producto A</th>
+                                <td>496,306</td>
+                                <td>162,650</td>
+                                <td>270,406</td>
+                                <td>85,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto B</th>
+                                <td>269,306</td>
+                                <td>140,650</td>
+                                <td>444,406</td>
+                                <td>72,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto C</th>
+                                <td>230,306</td>
+                                <td>19,712</td>
+                                <td>435,406</td>
+                                <td>71,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto D</th>
+                                <td>470,306</td>
+                                <td>279,650</td>
+                                <td>433,406</td>
+                                <td>394,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto E</th>
+                                <td>496,306</td>
+                                <td>162,650</td>
+                                <td>270,406</td>
+                                <td>85,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto F</th>
+                                <td>177,306</td>
+                                <td>17,650</td>
+                                <td>104,406</td>
+                                <td>451,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto G</th>
+                                <td>390,306</td>
+                                <td>444,650</td>
+                                <td>237,406</td>
+                                <td>387,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto H</th>
+                                <td>436,306</td>
+                                <td>242,650</td>
+                                <td>129,406</td>
+                                <td>385,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto I</th>
+                                <td>400,306</td>
+                                <td>416,650</td>
+                                <td>16,406</td>
+                                <td>31,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto J</th>
+                                <td>234,306</td>
+                                <td>213,650</td>
+                                <td>214,406</td>
+                                <td>233,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td colspan="3">
+                                    <div align='center'>
+                                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="titInst">Top 10: Productos con más clientes de alto riesgo</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th colspan="4" scope="col">Tipo de Cliente</th>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col" colspan="2">Nacional</th>
+                                <th scope="col" colspan="2">Extranjero</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">P. Física</th>
+                                <th scope="col">P. Moral</th>
+                                <th scope="col">P. Física</th>
+                                <th scope="col">P. Moral</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Producto A</th>
+                                <td>496,306</td>
+                                <td>162,650</td>
+                                <td>270,406</td>
+                                <td>85,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto B</th>
+                                <td>269,306</td>
+                                <td>140,650</td>
+                                <td>444,406</td>
+                                <td>72,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto C</th>
+                                <td>230,306</td>
+                                <td>19,712</td>
+                                <td>435,406</td>
+                                <td>71,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto D</th>
+                                <td>470,306</td>
+                                <td>279,650</td>
+                                <td>433,406</td>
+                                <td>394,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto E</th>
+                                <td>496,306</td>
+                                <td>162,650</td>
+                                <td>270,406</td>
+                                <td>85,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto F</th>
+                                <td>177,306</td>
+                                <td>17,650</td>
+                                <td>104,406</td>
+                                <td>451,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto G</th>
+                                <td>390,306</td>
+                                <td>444,650</td>
+                                <td>237,406</td>
+                                <td>387,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto H</th>
+                                <td>436,306</td>
+                                <td>242,650</td>
+                                <td>129,406</td>
+                                <td>385,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto I</th>
+                                <td>400,306</td>
+                                <td>416,650</td>
+                                <td>16,406</td>
+                                <td>31,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto J</th>
+                                <td>234,306</td>
+                                <td>213,650</td>
+                                <td>214,406</td>
+                                <td>233,427</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td colspan="3">
+                                    <div align='center'>
+                                        <a href=''><i class="fa fa-download" style='font-size:20px;'></i></a>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>-->
+            
+
+            
+        </div>
+    </div>
+</div>

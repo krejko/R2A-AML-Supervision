@@ -1,0 +1,111 @@
+[{
+        "index": 0,
+        "CURP": null,
+        "DOB": "1990\/02\/07",
+        "RFC": "2564007d0685c0ecc2487e8314eced746f3bb6fdfb9b6eae7d1c3d9857d06ae6",
+        "apellidos": "a847e0661cfba1c75fb5cc572ebe3544354e5e76aa43a9e201c9716e4ea9a72f 6bc6b36a26145a2740a4d9514e0986538d63893d2637461530307d992e2d101d",
+        "id_1": 14633699,
+        "id_2": 46289872,
+        "nombre": "67177fd786d8f20309d35e6895b000c6c0e10c3ed19dec003e02201841216db5",
+        "status": "Activo"
+    },
+    {
+        "index": 1,
+        "CURP": null,
+        "DOB": "1973\/08\/27",
+        "RFC": "b94cf556aa5f32d4f23fb8e5c15916e386c494b1880c1325e9c920c344b9df4f",
+        "apellidos": "a847e0661cfba1c75fb5cc572ebe3544354e5e76aa43a9e201c9716e4ea9a72f b1e115be658a5c9eb7062108c6fd702fa60d9e22372fb5ed8f92b56c1f75e9c6",
+        "id_1": 16745798,
+        "id_2": 46787898,
+        "nombre": "944f212fde887aeb62bcf636159f34f43247afb20c25c90c3f0b50dd88d60f7d",
+        "status": "Activo"
+    },
+    {
+        "index": 2,
+        "CURP": null,
+        "DOB": "1975\/07\/29",
+        "RFC": "91e6a287851ae95fef1e65395666458f2131929d3805b2a3c9b6cec5252769aa",
+        "apellidos": "b1e115be658a5c9eb7062108c6fd702fa60d9e22372fb5ed8f92b56c1f75e9c6 b418f176ac8b52a22392fcbd664eac9e5fb2ffa1d9d287cc0feb17171348231e",
+        "id_1": 17128056,
+        "id_2": 43801338,
+        "nombre": "65e57e68bee98e3278f2a280831ac79f871b673f9270c4845daae42a4060bc7b",
+        "status": "Cancelado"
+    },
+    {
+        "index": 3,
+        "CURP": null,
+        "DOB": "1984\/07\/20",
+        "RFC": "c8fbb3d9090efa531e9029ac5c1eec23a5df6e5b017bd686ffc213d971fbb0ad",
+        "apellidos": "531bac6d134e96c685639729227673e0b89360693c7575753d25934a5f648854 97288772911a63302ffd8645d39e9bce7ed6924483c72889156d13300333e1a4",
+        "id_1": 44554705,
+        "id_2": 52080220,
+        "nombre": "c5ffd003420366a109316a8bb0dd5696e48cc8ab5ee5a6c4e6643afb84df1baf",
+        "status": "Cancelado"
+    },
+    {
+        "index": 4,
+        "CURP": null,
+        "DOB": "1997\/01\/28",
+        "RFC": "62fec53f02b9e7ec74d09029e0311c0da50b76df0f046172f99b94d9c0cfb862",
+        "apellidos": "bf73fb2f9d8c211c4c8843b65d4a9ea204099ce45980bf23c839319511f4f9f1 0b326e08074b67f787695c62184502c6db5b22694107b6f75c0e196d76379807",
+        "id_1": 44571684,
+        "id_2": 49301553,
+        "nombre": "e24aec4b09ffd79e72f5bb64c6a5dc2048d43ed87be68664181a394820f883f5",
+        "status": "Activo"
+    },
+    {
+        "index": 5,
+        "CURP": null,
+        "DOB": "1994\/03\/31",
+        "RFC": "7bc988389b5a102b9a792ab226c9deb93245d03922e1f9e93fe1d1882aa60c21",
+        "apellidos": "a847e0661cfba1c75fb5cc572ebe3544354e5e76aa43a9e201c9716e4ea9a72f ff373698bbffdaf27dbafa79baa4a32dfbc1658f1c299e0369af5908eebf3045",
+        "id_1": 44634895,
+        "id_2": 51930035,
+        "nombre": "9cd96fab8d9e3972b442730cf690b8f13cf3cd0d727a2b54dd1d4a0f04307c41",
+        "status": "Cancelado"
+    },
+    {
+        "index": 6,
+        "CURP": null,
+        "DOB": "1971\/12\/06",
+        "RFC": "05f72c4027bbb93d669e3837fa6d7a4c2848cca0c7714b7e4fb46fee6d40d74b",
+        "apellidos": "9004670527fdb6ed0d80956ef431a366076c2efe8052c82ceb4484ad64d49b34 66f7c3f38607d52236f747252c8feba4866900d6c174ecfd2e0dffbc608b1623",
+        "id_1": 44716471,
+        "id_2": 52132577,
+        "nombre": "c7fdc0e9d76d38478dff6de2c85267ce7ec245441d8f342604887d7e25b5bc86",
+        "status": "Cancelado"
+    },
+    {
+        "index": 7,
+        "CURP": null,
+        "DOB": "1979\/05\/04",
+        "RFC": "136259bc8a6355b27c764e9942aeb373324d0386ec92b84455a5c1d46cf00b3b",
+        "apellidos": "99ae99299ba63bbc8bdf63a28f0006e115e69fce465d512aa502b3a664dc3aca a847e0661cfba1c75fb5cc572ebe3544354e5e76aa43a9e201c9716e4ea9a72f",
+        "id_1": 44508477,
+        "id_2": 50336661,
+        "nombre": "d1ba4547b27cca338578d930a63ea9638d4e6f53cd152df2c9c60613ef38fd49",
+        "status": "Cancelado"
+    },
+    {
+        "index": 8,
+        "CURP": null,
+        "DOB": "1992\/04\/01",
+        "RFC": "b50fa32ec594296f232ed2d59b482ebf1cd1f09f85fcfb8b22c438187c330c23",
+        "apellidos": "5de637f58bb78d43bfa99f90057fddd10adb2401be8c63a77f0bee92ce08f4c5 6f458df7c49c6e3f0ffe635081aabe4ee8e9ca59d3d4dd3ea4b5db0361140eeb",
+        "id_1": 44782615,
+        "id_2": 47690593,
+        "nombre": "eca01424b47916d6b6a2d8de1f677e3e3c55608537b4e1bca2741ecc33aa4fe2",
+        "status": "Cancelado"
+    },
+    {
+        "index": 9,
+        "CURP": null,
+        "DOB": "1998\/08\/26",
+        "RFC": "b46f5ac90fe0eac6b6c9f5a2eaac1e09dd5cf1b047b6ee5674611579d8ca0409",
+        "apellidos": "a847e0661cfba1c75fb5cc572ebe3544354e5e76aa43a9e201c9716e4ea9a72f 2b7a4c883f1f6cbf7f1860fb304df858c48f2b51173663cf2ef4ecfdd474a734",
+        "id_1": 44899175,
+        "id_2": 51763628,
+        "nombre": "efc45c5ade49d91f5b8adf5b6acec6b0a5646f4a5dd25752872779c83c0cc688",
+        "status": "Activo"
+    }
+]

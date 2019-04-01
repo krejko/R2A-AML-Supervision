@@ -1,0 +1,67 @@
+@font-face {
+    font-family: SoberanaTitular-Bold;
+    src: url(../fonts/SoberanaTitular-Bold.otf);
+}
+@font-face {
+    font-family: SoberanaTitular-Regular;
+    src: url(../fonts/SoberanaTitular-Regular.otf);
+}
+
+
+body {
+    background: #2b313c;
+}
+
+h3.titInst {
+    background: #475362;
+    color:#8d9bab;
+    border-radius: 15px;
+    font-family: SoberanaTitular-Regular;
+    font-size: 17px;
+    padding-top: 7px;
+}
+
+.col-md-3 .tabla, .col-md-9 .tabla {
+    background: #414c59;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #000;
+    margin-top: 10px;
+    
+}
+
+.col-md-3 .tabla {
+    padding: 10px;
+}
+
+.col-md-3 .tabla h4, .col-md-9 .tabla h4 {
+    background: #475362;
+    color: #919ca8;
+    background: #475362;
+    color: #919ca8;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    border-radius: 10px;
+    font-family: SoberanaTitular-Regular;
+}
+
+.col-md-3 .tabla h4 {
+}
+
+.col-md-3 .tabla fieldset, .col-md-9 .tabla {
+    padding: 10px;
+}
+
+.col-md-3 .tabla select {
+    border-radius: 10px;
+border: none;
+font-size: 13px;
+background: #df6e87;
+color: #fff;
+padding: 10px;
+height: 50px;
+}
+
+
+.amcharts-chart-div a {
+    display: none !important;
+}

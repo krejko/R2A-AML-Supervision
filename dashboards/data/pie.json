@@ -1,0 +1,21 @@
+[{
+	"cve_moneda": 1,
+	"monto": "742593.00",
+	"num_oper": 25.0,
+	"riesgo": 4
+}, {
+	"cve_moneda": 2,
+	"monto": "5136578649.00",
+	"num_oper": 25849.0,
+	"riesgo": 3
+}, {
+	"cve_moneda": 3,
+	"monto": "0.00",
+	"num_oper": 0.0,
+	"riesgo": 4
+}, {
+	"cve_moneda": 4,
+	"monto": "0.00",
+	"num_oper": 0.0,
+	"riesgo": 4
+}]
