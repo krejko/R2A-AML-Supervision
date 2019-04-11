@@ -1,3 +1,19 @@
+R2A AML Supervision
+=================================
+
+The Mexican National Banking and Securities Commission (Comisión Nacional Bancaria y de Valores, or CNBV) is partnering with R2A to reengineer its data infrastructure to strengthen its anti-money laundering (AML) supervisory capacity and to accommodate a growing fintech sector in order to:
+
+
+* Allow financial institutions to submit information for AML compliance digitally and automatically to the CNBV.
+* Increase the volume, granularity, and frequency – and improve the quality – of AML-related data submitted to the CNBV.
+* Enable CNBV staff to import historical records into the central data storage platform.
+* Enable CNBV staff to improve AML-related data validation and analysis, and generate customized reports for supervisory and policy development purposes.
+
+
+A panel of judges selected Gestell for the development of a data request/storage platform and tools for data-driven metrics and insights for the AML department. Gestell was founded to empower financial institutions and other agencies by utilizing new technologies to create intelligent systems to make financial oversight and operations more efficient and less costly. It has previously worked with the Mexican Notary Offices and various private-sector clients. 
+
+
+
 Core Functionalities of Prototype
 =================================
 
